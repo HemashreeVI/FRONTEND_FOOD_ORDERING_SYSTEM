@@ -2,18 +2,20 @@
 
 # 🍔 Tasty Bites
 
-### A colorful, fully interactive food ordering website, built in a single HTML file.
+### A playful, fully interactive food ordering website with smooth scrolling, 3D-feel animations and a live order tracker.
 
-Browse the menu, customize your dish, apply promo codes, check out, and watch your order move from kitchen to door.
+Browse the menu, customize your dish, check out in three steps, and watch your rider travel the map to your door.
 
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
-![Dependencies](https://img.shields.io/badge/dependencies-none-12b886)
-![Responsive](https://img.shields.io/badge/Responsive-yes-ff4d3d)
+**[🌐 Live demo](https://hemashreevi.github.io/FRONTEND_FOOD_ORDERING_SYSTEM/)** · [Features](#-features) · [Tech](#-tech-stack) · [Run it](#-run-it-locally) · [Customize](#%EF%B8%8F-customizing) · [Roadmap](#%EF%B8%8F-roadmap)
+
+![React](https://img.shields.io/badge/React_19-20232A?logo=react&logoColor=61DAFB)
+![Vite](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white)
+![GSAP](https://img.shields.io/badge/GSAP-0AE448?logo=greensock&logoColor=black)
+![Lenis](https://img.shields.io/badge/Lenis-smooth_scroll-ff4d3d)
+![React Bits](https://img.shields.io/badge/React_Bits-components-12b886)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
-[Features](#-features) · [Getting started](#-getting-started) · [Promo codes](#-promo-codes) · [Customizing](#-customizing) · [Deploy](#-deploy-for-free) · [Roadmap](#-roadmap)
+<img src="docs/hero.png" alt="Tasty Bites hero: What are you craving ramen?" width="100%"/>
 
 </div>
 
@@ -21,47 +23,41 @@ Browse the menu, customize your dish, apply promo codes, check out, and watch yo
 
 ## ✨ Features
 
+### A page that moves with you
+- 🧈 **Buttery smooth scrolling** with Lenis, synced to GSAP ScrollTrigger
+- 🍽️ **Hero plate** that spins as you scroll, with food that floats, parallaxes and leans toward your cursor
+- 🔤 **Animated headline**: "What are you craving **ramen / biryani / tacos**?" (React Bits SplitText + RotatingText)
+- 📣 **Promo ticker** that speeds up and skews with your scroll speed (React Bits ScrollVelocity)
+- 🛵 **"How it works" scrollytelling**: the section pins while a scooter rides the road from kitchen to home
+- 🎠 **Today's specials**: a pinned horizontal rail where cards swing in like a 3D carousel
+- 🪄 **Fly-to-cart**: the dish leaps along an arc into your cart (GSAP MotionPath)
+- 🔀 **Cards glide to new spots** when you filter or sort (GSAP Flip), with a 3D tilt on hover
+
 ### Menu
-- 🍽️ **16 dishes** across Pizza, Burgers, Asian, Mexican, Desserts and Drinks
-- 🔍 **Live search** as you type
-- 🏷️ **Category chips** plus a **❤️ Favorites** view
-- 🌱 **Veg-only toggle** with veg / non-veg markers on every dish
-- ↕️ **Sorting** by popularity, rating, or price (low to high, high to low)
-- 🎲 **Surprise me** button that picks a random dish for you
+- 🍕 **24 dishes** across Pizza, Burgers, Asian, **Indian**, Mexican, **Bowls**, Desserts and Drinks
+- 🔍 Live search (also from the hero), category chips and a ❤️ **Favorites** view
+- 🌱 **Veg-only switch** with veg / non-veg markers, spice level, prep time, rating and calories
+- ↕️ Sort by popularity, rating, price or **fastest**
+- 🎲 **Surprise me** picks a random dish
 
 ### Ordering
-- 🎛️ **Dish customizer** with size (Regular, Large, XL), extras, and quantity, with the price updating live
-- 🛒 **Slide-out cart** with quantity controls and one-click remove
-- 🛵 **Delivery or pickup** mode, which changes the delivery fee
-- 🚚 **Free-delivery progress bar** that fills as you add items
-- 💸 **Tip selector**, 8% tax, and a full price breakdown
-- 🎟️ **Promo codes** validated on apply
+- 🎛️ **Customizer**: size (Regular, Large, XL), extras and quantity, with the price updating live
+- 🛒 **Slide-out cart** with quantity controls, delivery or pickup, a free-delivery progress bar, tips, 8% tax and promo codes
+- 🧾 **3-step checkout**: address (with **saved addresses**), time (**ASAP or schedule a slot**), and pay on delivery (cash, card or UPI; no card details are ever asked for)
+
+<img src="docs/customize.png" alt="Dish customizer" width="49%"/> <img src="docs/tracker.png" alt="Live order tracker" width="49%"/>
 
 ### After checkout
-- 📍 **Live order tracker** that steps through confirmed, cooking, on the way, and delivered
-- 🎉 Confetti when the order arrives
+- 🗺️ **Live map tracker**: watch the rider move along the route while each stage lights up
+- 🎉 **Food confetti** when it arrives, then **rate each dish** (your stars appear on the menu)
+- 📜 **Order history** with **one-tap reorder**; progress survives a page refresh
 
 ### Quality of life
-- 💾 **Cart and favorites persist** across page refreshes (via `localStorage`)
-- 🌓 **Light and dark theme**, following your system setting with a manual toggle
-- 📱 **Responsive** layout for phones, tablets and desktops
-- ⌨️ **Keyboard friendly**: visible focus states, `Esc` closes any panel
-- 🐢 Respects `prefers-reduced-motion`
-
----
-
-## 🚀 Getting started
-
-There is nothing to install and nothing to build.
-
-```bash
-git clone https://github.com/<your-username>/tasty-bites.git
-cd tasty-bites
-```
-
-Then open **`tasty-bites.html`** in any modern browser (double-click it, or right-click → *Open with* → your browser).
-
-> An internet connection is only needed to load the **Bricolage Grotesque** font from Google Fonts. Without it, the page falls back to the system font and still works.
+- 💾 Cart, favorites, orders, addresses and ratings persist in `localStorage` (favorites from the classic version carry over)
+- 🌓 Light and dark theme, with no flash on load
+- 📱 Responsive from phones to wide screens
+- ⌨️ Keyboard friendly: visible focus, `Esc` closes panels, focus stays inside open dialogs
+- 🐢 Respects `prefers-reduced-motion` (all scroll effects switch off)
 
 ---
 
@@ -73,111 +69,108 @@ Then open **`tasty-bites.html`** in any modern browser (double-click it, or righ
 | `YUM5` | $5 off orders of $20 or more |
 | `FREESHIP` | Waives the delivery fee |
 
-Delivery is also free automatically when the order is $30 or more (after discounts) or when you choose **Pickup**.
+Delivery is also free automatically at $30 or more (after discounts) or when you choose **Pickup**.
 
 ---
 
 ## 🧰 Tech stack
 
-- **HTML5**, **CSS3** (custom properties, grid, flexbox, `color-mix`) and **vanilla JavaScript**
-- No frameworks, no build step, no npm packages
-- **Google Fonts** for typography (Bricolage Grotesque)
-- Emoji as food imagery, so there are no image files to host
+| Need | Choice |
+|---|---|
+| UI | React 19 + Vite |
+| Animation | [GSAP](https://gsap.com) with ScrollTrigger, Flip, MotionPath and SplitText via `useGSAP` (patterns from [greensock/gsap-skills](https://github.com/greensock/gsap-skills)) |
+| Smooth scroll | [Lenis](https://github.com/darkroomengineering/lenis), driven by GSAP's ticker |
+| Components | [React Bits](https://github.com/DavidHDev/react-bits): SplitText, RotatingText, ScrollVelocity, ShinyText, CountUp, Magnet, ClickSpark |
+| Design system | Generated with [UI UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill): vibrant block style, funnel checkout, SVG icons for controls, 4.5:1 contrast |
+| State | React context + reducer, persisted to `localStorage` |
+| Food art | Emoji on gradient plates, so there are no image files to host |
+
+The Claude Code skills used to build it (GSAP skills and UI UX Pro Max) are included in `.claude/skills/`.
+
+---
+
+## 🚀 Run it locally
+
+```bash
+git clone https://github.com/HemashreeVI/FRONTEND_FOOD_ORDERING_SYSTEM.git
+cd FRONTEND_FOOD_ORDERING_SYSTEM
+npm install
+npm run dev       # http://localhost:5173/FRONTEND_FOOD_ORDERING_SYSTEM/
+npm test          # pricing and promo-code unit tests
+npm run build     # production build in dist/
+```
+
+The original single-file version is kept at [`public/classic/index.html`](public/classic/index.html) and is served at `/classic/` on the live site.
 
 ---
 
 ## 🗂️ Project structure
 
 ```
-tasty-bites/
-├── tasty-bites.html   # The entire app: markup, styles and logic
-└── README.md
+src/
+├── App.jsx               page layout and overlay state
+├── data/menu.js          dishes, categories, sizes and extras
+├── lib/pricing.js        prices, promo codes, delivery fee, tax (unit tested)
+├── lib/orders.js         order stages, derived from time
+├── lib/fx.js             fly-to-cart, confetti, toasts
+├── state/store.jsx       cart, favorites, orders, addresses, ratings
+├── components/           Hero, HowItWorks, Specials, Menu, DishCard, DishModal,
+│                         CartDrawer, Checkout, Tracker, Orders, Nav, Footer
+└── bits/                 React Bits components
 ```
 
 ---
 
 ## 🛠️ Customizing
 
-Everything lives in `tasty-bites.html`.
-
-**Add or edit dishes.** Find the `M` array in the `<script>` and add an object:
+**Add a dish** in `src/data/menu.js`:
 
 ```js
-{ i: 17, n: 'Butter Chicken', e: '🍛', c: 'Asian', p: 12.49,
-  d: 'Creamy tomato curry with soft naan',
-  r: 4.8, t: 20, v: 0, s: 1, h: 1 }
+{ id: 25, name: 'Chole Bhature', emoji: '🫓', category: 'Indian', price: 9.49,
+  desc: 'Spiced chickpeas with fluffy fried bread', rating: 4.8, time: 18,
+  veg: true, spice: 2, popular: false, kcal: 720 }
 ```
 
-| Key | Meaning |
-|---|---|
-| `i` | Unique id |
-| `n` / `d` | Name / description |
-| `e` | Emoji used as the picture |
-| `c` | Category (must exist in the `G` color map) |
-| `p` | Base price in dollars |
-| `r` / `t` | Rating / prep time in minutes |
-| `v` | `1` if vegetarian |
-| `s` | Spice level, `0` to `3` |
-| `h` | `1` to mark as Popular |
-
-**Add a category.** Add it to the `cats` list inside `render()` and give it two gradient colors in the `G` object.
-
-**Change sizes and extras.** Edit the `SZ` and `EX` arrays (name and price add-on).
-
-**Add or change promo codes.** Update the `calc()` function for the discount logic and the code list inside the Apply button handler (`$('#pa').onclick`).
-
-**Rebrand.** Change the color variables at the top of the `<style>` block (`--a`, `--b`, `--c`) and the logo text in the nav.
+**Add a category**: add it to `CATEGORIES` and give it two gradient colors in `GRADIENTS`.
+**Change sizes or extras**: edit `SIZES` and `EXTRAS`.
+**Promo codes**: edit `PROMOS` and the discount rule in `totals()` in `src/lib/pricing.js` (and its test).
+**Tracker speed**: change `STEP_MS` in `src/lib/orders.js`.
+**Rebrand**: change the color variables at the top of `src/styles.css`.
 
 ---
 
-## 🌍 Deploy for free
+## 🌍 Deploy
 
-**GitHub Pages**
-1. Rename `tasty-bites.html` to `index.html` (so it loads at the root URL).
-2. Push the repo to GitHub.
-3. Go to **Settings → Pages**, set the source to your main branch, and save.
-4. Your site will be live at `https://<your-username>.github.io/<repo-name>/` after a minute or two.
-
-**Netlify / Vercel / Cloudflare Pages:** drag and drop the folder or connect the repo. No build command is needed.
+Pushing to `main` runs `.github/workflows/deploy.yml`, which tests, builds and publishes to GitHub Pages.
+One-time setup: **Settings → Pages → Source → GitHub Actions**.
+If you rename the repo, update `base` in `vite.config.js` (the path is case-sensitive).
 
 ---
 
 ## ⚠️ Limitations
 
-This is a front-end demo, so a few things are simulated:
-
-- **No real payments or accounts.** Checkout does not charge anything or send an order anywhere.
-- **The order tracker is a simulation** on a timer, not connected to a kitchen or a rider.
-- **Data stays in your browser.** Cart and favorites are saved with `localStorage`, so they are per-device and per-browser.
+This is a front-end demo:
+- **No real payments or accounts.** Checkout never charges anything or asks for card details.
+- **The tracker is simulated** (each stage takes a few seconds) and the map is illustrative.
+- **Data stays in your browser** via `localStorage`.
 
 ---
 
 ## 🗺️ Roadmap
 
-- [ ] Real dish photos instead of emoji
-- [ ] Order history page
-- [ ] Backend and database for menu and orders (Node, Firebase or Supabase)
+- [x] Order history page
+- [x] Map-based delivery tracking (simulated)
+- [x] Dish ratings (your own, saved locally)
+- [x] Saved addresses
+- [ ] Real dish photos
+- [ ] Backend for menu and orders (Node, Firebase or Supabase)
 - [ ] Payment integration (Stripe or Razorpay)
-- [ ] User accounts and saved addresses
-- [ ] Map-based delivery tracking
-- [ ] Dish ratings and reviews
-
----
-
-## 🤝 Contributing
-
-Ideas and pull requests are welcome. For bigger changes, please open an issue first so we can talk it through.
-
----
-
-## 📜 License
-
-Released under the [MIT License](LICENSE). Add a `LICENSE` file to your repository if you use this license.
+- [ ] User accounts
 
 ---
 
 <div align="center">
 
-Made with 🍅 and a lot of cheese. If you like it, give the repo a ⭐
+Made with 🍅 and a lot of cheese by **Hemashree V I**. If you like it, give the repo a ⭐
 
 </div>
